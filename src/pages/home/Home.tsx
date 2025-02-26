@@ -1,4 +1,6 @@
 import Logo from '../../assets/images/app_legal.png'
+import ListaCorridas from '../../components/corrida/listacorrida/ListaCorridas'
+import ModalCorrida from '../../components/modalcorridas/ModalCorridas'
 function Home() {
     return (
         <>
@@ -11,6 +13,11 @@ function Home() {
                         <p className='text-xl'>
                           Veja como se tornar um motorista parceiro
                         </p>
+                        <div className="flex justify-around gap-4">
+                            <div className="flex justify-around gap-4">
+                                <ModalCorrida />
+                            </div>
+                        </div>
                     </div>
 
                     <div className="flex justify-center py-4">
@@ -18,6 +25,7 @@ function Home() {
                     </div>
                 </div>
             </div>
+            <ListaCorridas />
         </>
     )
 }
