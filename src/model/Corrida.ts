@@ -1,4 +1,4 @@
-import Motorista from "./Motorita";
+import Motorista from "./Motorista";
 import Usuario from "./Usuario";
 
 export default interface Corrida{
@@ -6,9 +6,9 @@ export default interface Corrida{
     distancia:number;
     velocidade:number;
     tempoCorrida:number;
-    tempoFormatado:string;
     partida:string;
     destino:string;
+    tempoFormatado:string;
     usuario:Usuario | null;
     motorista:Motorista | null;
 }

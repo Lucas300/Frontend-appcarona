@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import Motorista from "../../../model/Motorita"
+import Motorista from "../../../model/Motorista"
 
 
 

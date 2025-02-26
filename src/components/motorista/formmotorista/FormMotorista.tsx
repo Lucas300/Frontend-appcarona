@@ -2,7 +2,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { RotatingLines } from "react-loader-spinner";
 import { useNavigate, useParams } from "react-router-dom";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
-import Motorista from "../../../model/Motorita";
+import Motorista from "../../../model/Motorista";
 
 function FormMotorista() {
 

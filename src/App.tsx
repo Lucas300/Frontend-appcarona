@@ -3,9 +3,10 @@ import CardUsuario from './components/usuario/cardusuario/CardUsuario'
 import Home from './pages/home/Home'
 import Navbar from './components/navbar/NavBar'
 import Footer from './components/footer/Footer'
-import ListaMotoristas from './components/motorista/listamotoristas/ListMotoristas'
+import ListaMotoristas from './components/motorista/listamotoristas/ListaMotoristas'
 import FormMotorista from './components/motorista/formmotorista/FormMotorista'
 import DeletarMotorista from './components/motorista/deletarmotorista/DeletarMotorista'
+import ListaUsuarios from './components/usuario/listausuarios/ListaUsuarios'
 
 function App() {
   return (
@@ -16,10 +17,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/motoristas" element={<ListaMotoristas />} />
-          <Route path="/usuarios" element={<CardUsuario />} />
           <Route path="/cadastrarmotorista" element={<FormMotorista />} />
           <Route path="/editarmotorista/:id" element={<FormMotorista />} />
           <Route path="/deletarmotorista/:id" element={<DeletarMotorista />} />
+          <Route path="/usuarios" element={<ListaUsuarios />} />
         </Routes>
       </div>
       <Footer />

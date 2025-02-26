@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { DNA } from "react-loader-spinner";
 import { buscar } from "../../../services/Service";
-import Motorista from "../../../model/Motorita";
+import Motorista from "../../../model/Motorista";
 import CardMotorista from "../cardmotorista/CardMotorista";
 
 function ListaMotoristas() {
