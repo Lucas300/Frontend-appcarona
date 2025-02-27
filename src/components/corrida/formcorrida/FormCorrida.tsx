@@ -12,7 +12,7 @@ function FormCorrida() {
 
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [motoristas, setMotoristas] = useState<Motorista[]>([])
-    const [motorista, setMotorista] = useState<Motorista>({ id: 0, nome:'' ,tipoVeiculo: '', })
+    const [motorista, setMotorista] = useState<Motorista>({ id: 0, nome:'' , tipoVeiculo: '', })
 
     const [usuarios, setUsuarios] = useState<Usuario[]>([])
     const [usuario, setUsuario] = useState<Usuario>({ id: 0, nome:'', email:'', telefone:''})
@@ -122,120 +122,106 @@ function FormCorrida() {
     const carregandoUsuario = usuario.nome === '';
 
     return (
-        <div className="container flex flex-col mx-auto items-center">
+        <div className="container min-h-screen flex flex-col mx-auto items-center">
             <h1 className="text-4xl text-center my-8">
-                {id !== undefined ? 'Editar Postagem' : 'Cadastrar Postagem'}
+                {id !== undefined ? 'Editar Corrida' : 'Cadastrar Corrida'}
             </h1>
 
-            <form className="flex flex-col w-1/2 gap-4" onSubmit={gerarNovaCorrida}>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="titulo">Partida</label>
-                    <input
-                        type="text"
-                        placeholder="Partida"
-                        name="partida"
-                        required
-                        className="border-2 border-slate-700 rounded p-2"
-                        value={corrida.partida}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                    />
-                </div>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="titulo">Destino</label>
-                    <input
-                        type="text"
-                        placeholder="Destino"
-                        name="destino"
-                        required
-                        className="border-2 border-slate-700 rounded p-2"
-                        value={corrida.destino}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                    />
-                </div>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="titulo">Distancia</label>
-                    <input
-                        type="number"
-                        placeholder="Distancia"
-                        name="distancia"
-                        required
-                        className="border-2 border-slate-700 rounded p-2"
-                        value={corrida.distancia}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                    />
-                </div>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="titulo">Velocidade</label>
-                    <input
-                        type="number"
-                        placeholder="Velocidade"
-                        name="velocidade"
-                        required
-                        className="border-2 border-slate-700 rounded p-2"
-                        value={corrida.velocidade}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                    />
-                </div>
-                
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="titulo">TempoCorrida</label>
-                    <input
-                        type="number"
-                        placeholder="TempoCorrida"
-                        name="tempoCorrida"
-                        required
-                        className="border-2 border-slate-700 rounded p-2"
-                        value={corrida.tempoCorrida}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                    />
-                </div>
-                <div className="flex flex-col gap-2">
-                    <p>Usuario da Postagem</p>
-                    <select name="motorista" id="motorista" className='border p-2 border-slate-800 rounded'
-                        onChange={(e) => buscarMotoristaPorId(e.currentTarget.value)}
+            <div className="form-container w-1/2 overflow-y-auto">
+                <form className="flex flex-col gap-4" onSubmit={gerarNovaCorrida}>
+                    <div className="flex flex-col gap-2">
+                        <label htmlFor="titulo">Partida</label>
+                        <input
+                            type="text"
+                            placeholder="Partida"
+                            name="partida"
+                            required
+                            className="border-2 border-slate-700 rounded p-2"
+                            value={corrida.partida}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                        />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                        <label htmlFor="titulo">Destino</label>
+                        <input
+                            type="text"
+                            placeholder="Destino"
+                            name="destino"
+                            required
+                            className="border-2 border-slate-700 rounded p-2"
+                            value={corrida.destino}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                        />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                        <label htmlFor="titulo">Distância</label>
+                        <input
+                            type="number"
+                            placeholder="Distância"
+                            name="distancia"
+                            required
+                            className="border-2 border-slate-700 rounded p-2"
+                            value={corrida.distancia}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                        />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                        <label htmlFor="titulo">Velocidade</label>
+                        <input
+                            type="number"
+                            placeholder="Velocidade"
+                            name="velocidade"
+                            required
+                            className="border-2 border-slate-700 rounded p-2"
+                            value={corrida.velocidade}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                        />
+                    </div>
+                    
+                    <div className="flex flex-col gap-2">
+                        <p>Usuário da Corrida</p>
+                        <select name="motorista" id="motorista" className='border p-2 border-slate-800 rounded'
+                            onChange={(e) => buscarMotoristaPorId(e.currentTarget.value)}
+                        >
+                            <option value="" selected disabled>Selecione um motorista</option>
+
+                            {motoristas.map((motorista) => (
+                                <option key={motorista.id} value={motorista.id} >{motorista.nome}</option>
+                            ))}
+
+                        </select>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                        <p>Usuário</p>
+                        <select name="usuario" id="usuario" className='border p-2 border-slate-800 rounded'
+                            onChange={(e) => buscarUsuarioPorId(e.currentTarget.value)}
+                        >
+                            <option value="" selected disabled>Selecione um Usuário</option>
+                            {usuarios.map((usuario) => (
+                                <option key={usuario.id} value={usuario.id} >{usuario.nome}</option>
+                            ))}
+
+                        </select>
+                    </div>
+                    <button
+                        type='submit'
+                        className='rounded bg-[#325c28] hover:bg-[#111f0d]
+                                text-white font-bold w-1/2 mx-auto py-2 flex justify-center'
+                        disabled={carregandoMotorista || carregandoUsuario}
                     >
-                        <option value="" selected disabled>Selecione um motorista</option>
-
-                        {motoristas.map((motorista) => (
-                            <>
-                                <option value={motorista.id} >{motorista.nome}</option>
-                            </>
-                        ))}
-
-                    </select>
-                </div>
-                <div className="flex flex-col gap-2">
-                    <p>Usuario</p>
-                    <select name="usuario" id="usuario" className='border p-2 border-slate-800 rounded'
-                        onChange={(e) => buscarUsuarioPorId(e.currentTarget.value)}
-                    >
-                        <option value="" selected disabled>Selecione um Usuario</option>
-                        {usuarios.map((usuario) => (
-                            <>
-                                <option value={usuario.id} >{usuario.nome}</option>
-                            </>
-                        ))}
-
-                    </select>
-                </div>
-                <button
-                    type='submit'
-                    className='rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800
-                               text-white font-bold w-1/2 mx-auto py-2 flex justify-center'
-                    disabled={carregandoMotorista || carregandoUsuario}
-                >
-                    {isLoading ?
-                        <RotatingLines
-                            strokeColor="white"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="24"
-                            visible={true}
-                        /> :
-                        <span>{id !== undefined ? 'Atualizar' : 'Cadastrar'}</span>
-                    }
-                </button>
-            </form>
+                        {isLoading ?
+                            <RotatingLines
+                                strokeColor="white"
+                                strokeWidth="5"
+                                animationDuration="0.75"
+                                width="24"
+                                visible={true}
+                            /> :
+                            <span>{id !== undefined ? 'Atualizar' : 'Cadastrar'}</span>
+                        }
+                    </button>
+                </form>
+            </div>
         </div>
     );
 }

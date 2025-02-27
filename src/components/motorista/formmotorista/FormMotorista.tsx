@@ -64,14 +64,14 @@ function FormMotorista() {
     }
 
     return (
-        <div className="container flex flex-col items-center justify-center mx-auto">
+        <div className="container min-h-screen flex flex-col items-center justify-center mx-auto">
             <h1 className="text-4xl text-center my-8">
                 {id === undefined ? 'Cadastrar Motorista' : 'Editar Motorista'}
             </h1>
 
             <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoMotorista}>
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="nome">Nome do Motorista</label>
+                    <label htmlFor="nome">Nome do motorista</label>
                     <input
                         type="text"
                         placeholder="Nome do motorista"
@@ -82,10 +82,10 @@ function FormMotorista() {
                     />
                 </div>
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="descricao">Tipo de veiculo</label>
+                    <label htmlFor="descricao">Tipo de veículo</label>
                     <input
                         type="text"
-                        placeholder="Descreva o tipo de veiculo"
+                        placeholder="Descreva o tipo de veículo"
                         name='tipoVeiculo'
                         className="border-2 border-slate-700 rounded p-2"
                         value={motorista.tipoVeiculo}
@@ -93,8 +93,8 @@ function FormMotorista() {
                     />
                 </div>
                 <button
-                    className="rounded text-slate-100 bg-indigo-400 
-                               hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center"
+                    className="rounded text-slate-100 bg-[#325c28] hover:bg-[#111f0d]
+                                w-1/2 py-2 mx-auto flex justify-center"
                     type="submit">
                     {isLoading ?
                         <RotatingLines
