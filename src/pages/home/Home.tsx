@@ -2,9 +2,6 @@ import ListaCorridas from '../../components/corrida/listacorrida/ListaCorridas';
 import ModalCorrida from '../../components/modalcorridas/ModalCorridas';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 const images: string[] = [
     "/images/foto_01_cl.png",
