@@ -1,10 +1,10 @@
 import { Divide, GithubLogo, InstagramLogo } from "@phosphor-icons/react";
 import { LinkedinLogo } from "@phosphor-icons/react/dist/ssr";
-import lucas from "../../assets/images/Lucas_Daniel_3.jpg";
-import taina from "../../assets/images/Taina.jpg";
-import joao from "../../assets/images/joao.jpg";
-import juliana from "../../assets/images/Julian.jpg";
-import guilherme from "../../assets/images/guilherme.jpg";
+import lucas from "../../../public/images/Lucas_Daniel_3.jpg";
+import taina from "../../../public/images/taina.jpg";
+import joao from "../../../public/images/joao.jpg";
+import juliana from "../../../public/images/Julian.jpg";
+import guilherme from "../../../public/images/guilherme.jpg";
 
 function CardSobre() {
   let data = new Date().getFullYear();

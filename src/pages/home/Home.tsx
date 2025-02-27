@@ -2,18 +2,12 @@ import ListaCorridas from '../../components/corrida/listacorrida/ListaCorridas';
 import ModalCorrida from '../../components/modalcorridas/ModalCorridas';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-<<<<<<< HEAD
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-=======
->>>>>>> task6-card-estilizacao
 
 const images: string[] = [
-    "/images/foto_01_cl.png",
-    "/images/foto_02_cl.png",
-    "/images/foto_03_cl.png",
-    "/images/foto_04_cl.png",
+    "../../../public/images/foto_01_cl.png",
+    "../../../public/images/foto_02_cl.png",
+    "../../../public/images/foto_03_cl.png",
+    "../../../public/images/foto_04_cl.png",
 ];
 
 const ImageCarousel: React.FC = () => {
@@ -82,8 +76,5 @@ function Home() {
   );
 }
 
-<<<<<<< HEAD
 export default Home;
-=======
-export default Home;
->>>>>>> task6-card-estilizacao
+

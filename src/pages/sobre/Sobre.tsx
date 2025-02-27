@@ -1,7 +1,7 @@
 
-import carro1 from "../../assets/images/Carpool.png";
-import carro2 from "../../assets/images/Ord.png";
-import fundo from '../../assets/images/yung.png'
+import carro1 from "../../../public/images/Carpool.png";
+import carro2 from "../../../public/images/Ord.png";
+import fundo from '../../../public/images/yung.png'
 import CardSobre from "../../components/sobrecard/SobreCard";
 
 function Sobre() {
