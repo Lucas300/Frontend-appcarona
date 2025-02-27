@@ -6,7 +6,7 @@ function Footer() {
 
     return (
         <>
-            <div className="flex justify-center bg-[#849cc1] text-white">
+            <div className="flex justify-center bg-[#111f0d] text-white">
                 <div className="container flex flex-col items-center py-4">
                     <p className='text-xl font-bold'>
                             App Carona Legal | Copyright: {data}
