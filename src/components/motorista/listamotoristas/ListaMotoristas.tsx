@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { DNA } from "react-loader-spinner";
+import { Hourglass } from "react-loader-spinner";
 import { buscar } from "../../../services/Service";
 import Motorista from "../../../model/Motorista";
 import CardMotorista from "../cardmotorista/CardMotorista";
@@ -25,14 +25,15 @@ function ListaMotoristas() {
     return (
         <>
         {motoristas.length === 0 && (
-            <DNA
-            visible={true}
-            height="200"
-            width="200"
-            ariaLabel="dna-loading"
-            wrapperStyle={{}}
-            wrapperClass="dna-wrapper mx-auto"
-        />
+          <Hourglass
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="hourglass-loading"
+          wrapperStyle={{}}
+          wrapperClass=" hourglass-wrapper mx-auto"
+          colors={['#213d1b', '#427a36']}
+          />
         )}
             <div className="flex justify-center w-full my-4">
                 <div className="container flex flex-col">
