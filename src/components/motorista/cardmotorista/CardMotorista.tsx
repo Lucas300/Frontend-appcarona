@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { UserCircleIcon } from "@heroicons/react/24/solid";
 import Motorista from "../../../model/Motorista"
 
 
@@ -9,26 +10,31 @@ interface CardMotoristaProps {
 
 function CardMotorista({ motorista }: CardMotoristaProps) {
     return (
-        <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-            <header className='py-2 px-6 bg-red-800 text-white font-bold text-2xl'>
-                Motorista
-            </header>
-            <p className='p-8 text-3xl bg-slate-200 h-full'>{motorista.nome}</p>
-            <p className='p-8 text-3xl bg-slate-200 h-full'>{motorista.tipoVeiculo}</p>
-            <div className="flex">
-                <Link to={`/editarmotorista/${motorista.id}`}
-                    className='w-full text-slate-100 bg-	indigo-400 hover:bg-indigo-800 
-    flex items-center justify-center py-2'>
-                    <button>Editar</button>
-                </Link>
+        <div className="flex flex-wrap justify-center m-8">
+            <div className='shadow-xl flex flex-col justify-between p-2 w-full '>
+                <div className=' flex items-center justify-between p-3 text-lg rounded-t-lg border-b-2 font-semibold text-[#111f0d] '>
+                    <p>Motorista</p>
+                    <UserCircleIcon className="w-10 h-10 text-gray-400"/>
+                </div>
+                
+                <div className='flex flex-col p-4 text-center text-base '>
+                    <p className="rounded-xl bg-[#b5db9d] p-2 m-1">{motorista.nome}</p>
+                    <p className="rounded-xl bg-[#b5db9d] p-2 m-1">{motorista.tipoVeiculo}</p>
+                </div>
+                <div className="flex p-2">
+                    <Link to={`/editarmotorista/${motorista.id}`}
+                        className='w-full text-slate-100 bg-[#427a36] hover:bg-[#325c28] 
+                            flex items-center justify-center rounded-l-lg py-2'>
+                        <button>Editar</button>
+                    </Link>
 
-                <Link to={`/deletarmotorista/${motorista.id}`}
-                    className='text-slate-100 bg-red-400 hover:bg-red-700 w-full 
-		flex items-center justify-center'>
-                    <button>Deletar</button>
-                </Link>
+                    <Link to={`/deletarmotorista/${motorista.id}`}
+                        className='w-full text-slate-100 bg-[#325c28] hover:bg-[#213d1b]
+                            flex items-center justify-center rounded-r-lg py-2'>
+                        <button>Deletar</button>
+                    </Link>
+                </div>
             </div>
-
         </div>
     )
 }

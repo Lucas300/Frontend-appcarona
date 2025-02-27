@@ -7,35 +7,29 @@ interface CardCorridasProps {
 
 function CardCorrida({ corrida }: CardCorridasProps) {
     return (
-        <div className='border-slate-900 border 
-            flex flex-col rounded overflow-hidden justify-between'>
-
+        <div className='shadow-xl flex flex-col justify-between m-8'>
             <div>
-                <div className="flex w-full bg-indigo-400 py-2 px-4 items-center gap-4">
-
-                    <h3 className='text-lg font-bold text-center uppercase'>
-                        Usuario:{corrida.usuario?.nome}
-                        Motorista:{corrida.motorista?.nome}
-                    </h3>
+                <div className="flex flex-col w-full bg-[#213d1b] p-2 text-base font-semibold text-white text-center">
+                    <p>Usuario: {corrida.usuario?.nome}</p>
+                    <p>Motorista: {corrida.motorista?.nome}</p>
                 </div>
-                <div className='p-4 '>
-                    <h4 className='text-lg font-semibold uppercase'>partida:{corrida.partida}</h4>
-                    <h4 className='text-lg font-semibold uppercase'>destino:{corrida.destino}</h4>
-                    <h4 className='text-lg font-semibold uppercase'>distancia:{corrida.distancia}</h4>
-                    <h4 className='text-lg font-semibold uppercase'>velocidade{corrida.velocidade}</h4>
-                    <p>Tempo corrida:{corrida.tempoFormatado}</p>
-
+                <div className='flex flex-col p-4 text-center text-base '>
+                    <p >Partida: {corrida.partida}</p>
+                    <p >Destino: {corrida.destino}</p>
+                    <p >Distancia: {corrida.distancia}</p>
+                    <p >Velocidade: {corrida.velocidade}</p>
+                    <p className='text-sm'>Tempo Corrida: {corrida.tempoFormatado}</p>
                 </div>
             </div>
             <div className="flex">
                 <Link to={`/editarcorrida/${corrida.id}`}
-                    className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-800 
-    flex items-center justify-center py-2'>
+                    className='w-full text-slate-100 bg-[#325c28] hover:bg-[#213d1b] 
+                        flex items-center justify-center py-2'>
                     <button>Editar</button>
                 </Link>
                 <Link to={`/deletarcorrida/${corrida.id}`}
-                    className='w-full text-slate-100 bg-red-400 hover:bg-indigo-800 
-    flex items-center justify-center py-2'>
+                    className='w-full text-slate-100 bg-[#213d1b] hover:bg-[#111f0d]
+                        flex items-center justify-center py-2'>
                     <button>Deletar</button>
                 </Link>
             </div>
