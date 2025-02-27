@@ -21,7 +21,7 @@ function ListaCorridas() {
 
     useEffect(() => {
         buscarCorridas()
-    }, [corridas.length])
+    }, [corridas])
 
     return (
         <>

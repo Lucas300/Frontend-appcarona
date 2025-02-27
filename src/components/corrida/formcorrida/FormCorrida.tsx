@@ -99,7 +99,7 @@ function FormCorrida() {
 
         if (id !== undefined) {
             try {
-                await atualizar(`/corridas`, corrida, setCorrida);
+                await atualizar(`/corridas/${id}`, corrida, setCorrida);
                 alert('Corrida atualizada com sucesso')
             } catch (error: any) {
                     alert('Erro ao atualizar a Corrida')
