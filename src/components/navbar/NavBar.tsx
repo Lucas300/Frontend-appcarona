@@ -13,8 +13,7 @@ function Navbar() {
                     <Link to='/motoristas' className="">Motorista</Link>
                     <Link to='/cadastrarmotorista' className='hover:underline'>Cadastrar motorista</Link>
                     <Link to='/usuarios' className='hover:underline'>Usuarios</Link>
-                    {/* <Link to='/corridas' className='hover:underline'>corridas</Link> */}
-                    Sobre                    
+                                     
                     </div>
                 </div>
             </div>

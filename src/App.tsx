@@ -9,6 +9,7 @@ import ListaUsuarios from './components/usuario/listausuarios/ListaUsuarios'
 import ListaCorridas from './components/corrida/listacorrida/ListaCorridas'
 import FormCorrida from './components/corrida/formcorrida/FormCorrida'
 import DeletarCorrida from './components/corrida/deletarcorrida/DeletarCorrida'
+import Sobre from './pages/sobre/Sobre'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/cadastrarcorrida" element={<FormCorrida />} />
           <Route path="/editarcorrida/:id" element={<FormCorrida />} /> 
           <Route path="/deletarcorrida/:id" element={<DeletarCorrida />} />
+          <Route path="/sobre" element={<Sobre />} />
         </Routes>
       </div>
       <Footer />
