@@ -55,15 +55,15 @@ function Home() {
   return (
     <>
       <div className="bg-[#FFFFFF] min-h-screen flex flex-col justify-center">
-        <div className='container grid grid-cols-2 text-[#111f0d]'>
+        <div className='container grid grid-cols-1 md:grid-cols-2 gap-8 text-[#111f0d] px-4'>
           <div className="flex flex-col gap-4 items-center justify-center py-6">
-            <h2 className='text-5xl font-bold'>
+            <h2 className='text-3xl md:text-5xl font-bold'>
               Seja Bem-Vindo!
             </h2>
-            <p className='text-xl text-center'>
-              Conectamos pessoas e destinos<br></br>Pegue uma carona hoje!
+            <p className='text-lg md:text-xl text-center'>
+              Conectamos pessoas e destinos<br />Pegue uma carona hoje!
             </p>
-            <div className="flex justify-around gap-4">
+            <div className="flex justify-center gap-4">
               <ModalCorrida />
             </div>
           </div>
@@ -71,7 +71,7 @@ function Home() {
         </div>
       </div>
       
-      <h2 className='text-5xl font-bold text-left text-[#111f0d] px-20'>
+      <h2 className='text-3xl md:text-5xl font-bold text-left text-[#111f0d] px-6 md:px-20'>
         Corridas
       </h2>
       <ListaCorridas />
