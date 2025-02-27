@@ -2,12 +2,15 @@ import ListaCorridas from '../../components/corrida/listacorrida/ListaCorridas';
 import ModalCorrida from '../../components/modalcorridas/ModalCorridas';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const images: string[] = [
-    "../../../public/images/foto_01_cl.png",
-    "../../../public/images/foto_02_cl.png",
-    "../../../public/images/foto_03_cl.png",
-    "../../../public/images/foto_04_cl.png",
+    "/images/foto_01_cl.png",
+    "/images/foto_02_cl.png",
+    "/images/foto_03_cl.png",
+    "/images/foto_04_cl.png",
 ];
 
 const ImageCarousel: React.FC = () => {
@@ -77,4 +80,3 @@ function Home() {
 }
 
 export default Home;
-
