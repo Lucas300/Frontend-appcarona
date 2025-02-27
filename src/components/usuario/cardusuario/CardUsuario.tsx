@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Usuario from '../../../model/Usuario'
 
 interface CardUsuariosProps{
@@ -7,17 +6,17 @@ interface CardUsuariosProps{
 
 function CardUsuario({ usuario }: CardUsuariosProps) {
     return (
-        <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-            <header className='py-2 px-6 bg-indigo-800 text-white font-bold text-2xl'>
-                Usuario
-            </header>
-            <p className='p-8 text-3xl bg-slate-200 h-full'>{usuario.nome}</p>
-            <p className='p-8 text-3xl bg-slate-200 h-full'>{usuario.email}</p>
-            <p className='p-8 text-3xl bg-slate-200 h-full'>{usuario.telefone}</p>
-            <div className="flex">
-                
+        <div className="flex flex-wrap justify-center m-8">
+            <div className='shadow-xl shadow-[#325c28]  flex flex-col justify-between w-full'>
+                <div className='p-2 text-lg font-semibold text-[#325c28] text-center'>
+                    <p>Usuário</p>
+                </div>
+                <div className='flex flex-col p-4 text-center text-base '>
+                    <p>Nome: {usuario.nome}</p>
+                    <p>Email: {usuario.email}</p>
+                    <p>Telefone: {usuario.telefone}</p>
+                </div>
             </div>
-
         </div>
     )
 }

@@ -9,16 +9,16 @@ function CardCorrida({ corrida }: CardCorridasProps) {
     return (
         <div className='shadow-xl flex flex-col justify-between m-8'>
             <div>
-                <div className="flex flex-col w-full bg-[#427a36] p-3 text-lg text-white font-medium text-center">
+                <div className="flex flex-col w-full bg-[#213d1b] p-2 text-base font-semibold text-white text-center">
                     <p>Usuario: {corrida.usuario?.nome}</p>
                     <p>Motorista: {corrida.motorista?.nome}</p>
                 </div>
-                <div className='flex flex-col p-4 text-center font-medium text-base '>
+                <div className='flex flex-col p-4 text-center text-base '>
                     <p >Partida: {corrida.partida}</p>
                     <p >Destino: {corrida.destino}</p>
                     <p >Distancia: {corrida.distancia}</p>
                     <p >Velocidade: {corrida.velocidade}</p>
-                    <p className='text-base font-light'>Tempo Corrida: {corrida.tempoFormatado}</p>
+                    <p className='text-sm'>Tempo Corrida: {corrida.tempoFormatado}</p>
                 </div>
             </div>
             <div className="flex">

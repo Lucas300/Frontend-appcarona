@@ -9,26 +9,29 @@ interface CardMotoristaProps {
 
 function CardMotorista({ motorista }: CardMotoristaProps) {
     return (
-        <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-            <header className='py-2 px-6 bg-red-800 text-white font-bold text-2xl'>
-                Motorista
-            </header>
-            <p className='p-8 text-3xl bg-slate-200 h-full'>{motorista.nome}</p>
-            <p className='p-8 text-3xl bg-slate-200 h-full'>{motorista.tipoVeiculo}</p>
-            <div className="flex">
-                <Link to={`/editarmotorista/${motorista.id}`}
-                    className='w-full text-slate-100 bg-	indigo-400 hover:bg-indigo-800 
-    flex items-center justify-center py-2'>
-                    <button>Editar</button>
-                </Link>
+        <div className="flex flex-wrap justify-center m-8">
+            <div className='shadow-xl flex flex-col justify-between  w-full '>
+                <div className='bg-[#213d1b] p-2 text-lg rounded-t-lg font-semibold text-white text-center'>
+                    <p>Motorista</p>
+                </div>
+                <div className='flex flex-col p-4 text-center text-base '>
+                    <p>{motorista.nome}</p>
+                    <p>{motorista.tipoVeiculo}</p>
+                </div>
+                <div className="flex">
+                    <Link to={`/editarmotorista/${motorista.id}`}
+                        className='w-full text-slate-100 bg-[#325c28] hover:bg-[#213d1b] 
+                            flex items-center justify-center rounded-bl-lg py-2'>
+                        <button>Editar</button>
+                    </Link>
 
-                <Link to={`/deletarmotorista/${motorista.id}`}
-                    className='text-slate-100 bg-red-400 hover:bg-red-700 w-full 
-		flex items-center justify-center'>
-                    <button>Deletar</button>
-                </Link>
+                    <Link to={`/deletarmotorista/${motorista.id}`}
+                        className='w-full text-slate-100 bg-[#213d1b] hover:bg-[#111f0d]
+                            flex items-center justify-center rounded-br-lg py-2'>
+                        <button>Deletar</button>
+                    </Link>
+                </div>
             </div>
-
         </div>
     )
 }
