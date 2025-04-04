@@ -1,50 +1,55 @@
-# React + TypeScript + Vite
+# 🚗 Carona Legal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O **Carona Legal** é um aplicativo fullstack desenvolvido para gerenciar **corridas entre usuários e motoristas** de forma eficiente. O sistema oferece uma experiência intuitiva, moderna e responsiva, facilitando o compartilhamento de caronas urbanas.
 
-Currently, two official plugins are available:
+## 📄 Modelagem da Aplicação
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🧩 Entidades/Models Criadas:
 
-## Expanding the ESLint configuration
+- **Usuário (`tb_usuario`)**
+  - `id`, `nome`, `email`, `telefone`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Motorista (`tb_motorista`)**
+  - `id`, `nome`, `tipoVeiculo`
 
-- Configure the top-level `parserOptions` property like this:
+- **Corrida (`tb_corrida`)**
+  - `id`, `distancia`, `velocidade`, `tempoCorrida`, `partida`, `destino`
+  - Chaves estrangeiras: `id_usuario`, `id_motorista`
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## ✨ Funcionalidades Principais (CRUD)
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- `formatarTempo()` – Método utilitário para converter segundos em formato hh:mm:ss  
+- `findAll()` – Lista todos os registros  
+- `findById()` – Busca por ID  
+- `findAllByNome()` – Busca por nome  
+- `post()` – Criação de novos registros  
+- `put()` – Atualização de dados existentes  
+- `delete()` – Exclusão de registros  
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## 👨‍💻 Tecnologias Utilizadas
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### 🛠️ Backend
+- Java 17+
+- Spring Boot (Web, DevTools, Data JPA)
+- MySQL Driver
+
+### 🌐 Frontend
+- React
+- TypeScript
+- JavaScript
+- Axios
+- Tailwind CSS
+- HTML, CSS
+- React Router DOM
+- React Loader Spinner
+- Reactjs Popup
+- Phosphor Icon
+- HeroIcons
+
+Feito com ❤️ por: 
+- Lucas(EU)
+- [Guilherme](https://github.com/GuilhermeKaludin)
+- [João](https://github.com/jloliveira95)
+- [Juliana](https://github.com/JulianaMonteiro4)
+- [Tainá](https://github.com/tainalara)
+
